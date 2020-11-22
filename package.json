@@ -17,7 +17,7 @@
     "graphql": "^15.4.0",
     "graphql-postgres-subscriptions": "^1.0.5",
     "graphql-tools": "^7.0.1",
-    "pg": "^8.5.1",
+    "pg": "^7.12.1",
     "sequelize": "^6.3.5",
     "subscriptions-transport-ws": "^0.9.18"
   },
