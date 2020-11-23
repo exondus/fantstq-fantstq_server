@@ -6,4 +6,12 @@ const posts = async () => {
 	return posts;
 };
 
-module.exports = { posts };
+const post = async (_, { id }) => {
+	const post = await Post.findOne({
+		where: { id: id },
+	});
+
+	return post;
+};
+
+module.exports = { posts, post };

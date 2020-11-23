@@ -8,7 +8,7 @@ const addPost = async (_, { content, image }) => {
 		postAdded: { id: post.id, content, image },
 	});
 
-	return post.id;
+	return post;
 };
 
 const editPost = async (_, { id, content, image }) => {
