@@ -1,4 +1,5 @@
-const { Post, sequelize } = require('../models');
+const { Post, User, Like, Comment, sequelize } = require('../models');
+const {} = require("../utils/userAuthorization");
 
 const posts = async () => {
 	const posts = await Post.findAll({ order: [['id', 'DESC']] });

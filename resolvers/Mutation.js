@@ -8,10 +8,11 @@ const addPost = async (_, { content, image }) => {
 		postAdded: { id: post.id, content, image },
 	});
 
-	return post;
+	return post.id;
 };
 
 const editPost = async (_, { id, content, image }) => {
+	console.log('POST ID!!!!!!!!!!!!!!!!!!!!!!!!!!', id);
 	const [updated] = await Post.update(
 		{ content, image },
 		{

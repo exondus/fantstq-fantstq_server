@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const resolvers = require('../resolvers');
 
 const { pubSub } = require('./pubSub');
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 9000;
 
 const typeDefs = gql`
 	type Post {
@@ -25,9 +25,10 @@ const typeDefs = gql`
 	}
 
 	type Mutation {
-		addPost(content: String!, image: String!): Post
-		editPost(id: ID!, content: String!, image: String!): Post
+		addPost(content: String, image: String): ID
+		editPost(id: ID!, content: String, image: String): Post
 		deletePost(id: ID!): ID
+		uploadImage(filename: String!, id: Int!): String!
 	}
 
 	type Subscription {
