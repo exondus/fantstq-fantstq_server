@@ -13,24 +13,18 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'userId',
 				onDelete: 'CASCADE',
 				as: 'user',
-			}),
-				Like.belongsTo(models.Post, {
-					foreignKey: 'postId',
-					onDelete: 'CASCADE',
-					as: 'post',
-				}),
-				Like.belongsTo(models.Comment, {
-					foreignKey: 'commentId',
-					onDelete: 'CASCADE',
-					as: 'comment',
-				});
+			});
+			Like.belongsTo(models.Post, {
+				foreignKey: 'postId',
+				onDelete: 'CASCADE',
+				as: 'post',
+			});
 		}
 	}
 	Like.init(
 		{
-			userId: DataTypes.STRING,
-			postId: DataTypes.STRING,
-			commentId: DataTypes.STRING,
+			postId: DataTypes.INTEGER,
+			userId: DataTypes.INTEGER,
 		},
 		{
 			sequelize,
