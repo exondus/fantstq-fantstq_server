@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const resolvers = require('../resolvers');
-const typeDefs = require('../schema/typeDefs');
+const { typeDefs } = require('../schema');
 const { pubSub } = require('./pubSub');
 
 const port = process.env.PORT || 9000;

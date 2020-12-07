@@ -12,7 +12,7 @@ const post = {
 			postAdded: { id: post.id, content, image },
 		});
 
-		return post.id;
+		return post;
 	},
 	async editPost(_, { id, content, image }) {
 		//TODO: Validate user
