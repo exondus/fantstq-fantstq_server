@@ -1,16 +1,17 @@
 const express = require('express');
-const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 const { execute, subscribe } = require('graphql');
 const { createServer } = require('http');
 const { makeExecutableSchema } = require('graphql-tools');
 const { SubscriptionServer } = require('subscriptions-transport-ws');
 const cors = require('cors');
-
 const bodyParser = require('body-parser');
-const resolvers = require('../resolvers');
-const typeDefs = require('../schema/typeDefs');
+require('dotenv').config();
 
+const resolvers = require('../resolvers');
+const { typeDefs } = require('../schema');
 const { pubSub } = require('./pubSub');
+
 const port = process.env.PORT || 9000;
 
 const schema = makeExecutableSchema({

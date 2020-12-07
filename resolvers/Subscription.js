@@ -12,4 +12,12 @@ const postDeleted = {
 	subscribe: () => pubSub.asyncIterator('postDeleted'),
 };
 
-module.exports = { postAdded, postEdited, postDeleted };
+const postLiked = {
+	subscribe: () => pubSub.asyncIterator('postLiked'),
+};
+
+const postUnLiked = {
+	subscribe: () => pubSub.asyncIterator('postLiked'),
+};
+
+module.exports = { postAdded, postEdited, postDeleted, postLiked, postUnLiked };

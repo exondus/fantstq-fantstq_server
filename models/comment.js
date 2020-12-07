@@ -13,19 +13,19 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'postId',
 				as: 'post',
 				onDelete: 'CASCADE',
-			}),
-				Comment.belongsTo(models.User, {
-					foreignKey: 'userId',
-					as: 'user',
-					onDelete: 'CASCADE',
-				});
+			});
+			Comment.belongsTo(models.User, {
+				foreignKey: 'userId',
+				as: 'user',
+				onDelete: 'CASCADE',
+			});
 		}
 	}
 	Comment.init(
 		{
 			text: DataTypes.STRING,
-			userId: DataTypes.STRING,
-			postId: DataTypes.STRING,
+			postId: DataTypes.INTEGER,
+			userId: DataTypes.INTEGER,
 		},
 		{
 			sequelize,

@@ -12,21 +12,21 @@ module.exports = (sequelize, DataTypes) => {
 			User.hasMany(models.Post, {
 				foreignKey: 'userId',
 				as: 'posts',
-			}),
-				User.hasMany(models.Comment, {
-					foreignKey: 'userId',
-					as: 'comments',
-				}),
-				User.hasMany(models.Like, {
-					foreignKey: 'userId',
-					as: 'likes',
-				});
+			});
+			User.hasMany(models.Comment, {
+				foreignKey: 'userId',
+				as: 'comments',
+			});
+			User.hasMany(models.Like, {
+				foreignKey: 'userId',
+				as: 'likes',
+			});
 		}
 	}
 	User.init(
 		{
-			fullName: DataTypes.STRING,
 			userHandle: DataTypes.STRING,
+			fullName: DataTypes.STRING,
 			email: DataTypes.STRING,
 			password_digest: DataTypes.STRING,
 		},
